@@ -33,4 +33,4 @@ config.html5video = {
 
 For more information, please look through ckeditor-html5-video's documentation on
 * **[Github](https://github.com/bahriddin/ckeditor-html5-video)**
-* **[CKEditor's plugin page](http://ckeditor.com/addon/html5video)**
+* **[OLD CKEditor's plugin page](http://ckeditor.com/addon/html5video)**, to be updated or moved.
