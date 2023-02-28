@@ -16,5 +16,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'de', {
     loop: 'Loop?',
     responsive: 'dynamische Grösse',
     controls: 'Steuerelemente anzeigen',
+    muted : 'stumm geschaltet',
     poster: 'Vorschaubild'
 } );

@@ -14,5 +14,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'es', {
     yes: 'Sí',
     no: 'No',
     responsive: '¿Responsive?',
-    controls: 'Mostrar controles'
+    controls: 'Mostrar controles',
+    muted: 'Silenciado?'
 } );

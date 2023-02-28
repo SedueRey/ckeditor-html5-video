@@ -13,7 +13,7 @@ CKEDITOR.plugins.add('html5video', {
         * ckeditor-html5-video class.
         *  - video tags with src, controls, width and height attributes.
         */
-      allowedContent: 'div[data-responsive](!ckeditor-html5-video){text-align,float,margin-left,margin-right}; video[src,poster,controls,autoplay,width, height,loop]{max-width,height};',
+      allowedContent: 'div[data-responsive](!ckeditor-html5-video){text-align,float,margin-left,margin-right}; video[src,poster,controls,autoplay,width,height,loop,muted]{max-width,height};',
       requiredContent: 'div(ckeditor-html5-video); video[src];',
       upcast(element) {
         return element.name === 'div' && element.hasClass('ckeditor-html5-video');
@@ -33,6 +33,7 @@ CKEDITOR.plugins.add('html5video', {
         let allowdownload = '';
         let advisorytitle = '';
         let responsive = '';
+        let muted = '';
 
         // If there's a child (the video element)
         if (this.element.getChild(0)) {
@@ -47,6 +48,7 @@ CKEDITOR.plugins.add('html5video', {
           controls = this.element.getChild(0).getAttribute('controls');
           responsive = this.element.getAttribute('data-responsive');
           poster = this.element.getChild(0).getAttribute('poster');
+          muted = this.element.getChild( 0 ).getAttribute( 'muted' );
         }
 
         if (src) {
