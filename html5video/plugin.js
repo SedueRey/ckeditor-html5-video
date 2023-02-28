@@ -30,10 +30,10 @@ CKEDITOR.plugins.add('html5video', {
         let height = '';
         let poster = '';
 
-        let allowdownload = '';
+        let allowdownload = false;
         let advisorytitle = '';
         let responsive = '';
-        let muted = '';
+        let muted = false;
 
         // If there's a child (the video element)
         if (this.element.getChild(0)) {
