@@ -9,11 +9,11 @@ CKEDITOR.plugins.setLang( 'html5video', 'es', {
     btnUpload: 'Enviar al servidor',
     advanced: 'Avanzado',
     autoplay: '¿Reproducir automáticamente?',
-    allowdownload: 'Allow download?',
-    advisorytitle: 'Advisory title',
+    allowdownload: '¿Permitir descarga?',
+    advisorytitle: 'Título consultivo',
     yes: 'Sí',
     no: 'No',
-    responsive: '¿Responsive?',
+    responsive: '¿Adaptativo?',
     controls: 'Mostrar controles',
-    muted: 'Silenciado?'
+    muted: '¿Silenciado?'
 } );
