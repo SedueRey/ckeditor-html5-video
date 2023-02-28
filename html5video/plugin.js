@@ -20,80 +20,86 @@ CKEDITOR.plugins.add('html5video', {
       },
       dialog: 'html5video',
       init() {
-        let src = '';
-        let autoplay = '';
-        let loop = '';
-        let controls = '';
-        const align = this.element.getStyle('text-align');
+        const defaultConfig = {
+          src : '',
+          autoplay : '',
+          loop : '',
+          controls : '',
+          align : this.element.getStyle('text-align'),
+          width : '',
+          height : '',
+          poster : '',
+          allowdownload : false,
+          advisorytitle : '',
+          responsive : '',
+          muted : false,
+        };
 
-        let width = '';
-        let height = '';
-        let poster = '';
-
-        let allowdownload = false;
-        let advisorytitle = '';
-        let responsive = '';
-        let muted = false;
+        const config = CKEDITOR.tools.extend(defaultConfig, editor.config.html5video || {}, true);
 
         // If there's a child (the video element)
         if (this.element.getChild(0)) {
           // get it's attributes.
-          src = this.element.getChild(0).getAttribute('src');
-          width = this.element.getChild(0).getAttribute('width');
-          height = this.element.getChild(0).getAttribute('height');
-          autoplay = this.element.getChild(0).getAttribute('autoplay');
-          allowdownload = !this.element.getChild(0).getAttribute('controlslist');
-          loop = this.element.getChild(0).getAttribute('loop');
-          advisorytitle = this.element.getChild(0).getAttribute('title');
-          controls = this.element.getChild(0).getAttribute('controls');
-          responsive = this.element.getAttribute('data-responsive');
-          poster = this.element.getChild(0).getAttribute('poster');
-          muted = this.element.getChild( 0 ).getAttribute( 'muted' );
+          config.src = this.element.getChild(0).getAttribute('src');
+          config.width = this.element.getChild(0).getAttribute('width');
+          config.height = this.element.getChild(0).getAttribute('height');
+          config.autoplay = this.element.getChild(0).getAttribute('autoplay');
+          config.allowdownload = !this.element.getChild(0).getAttribute('controlslist');
+          config.loop = this.element.getChild(0).getAttribute('loop');
+          config.advisorytitle = this.element.getChild(0).getAttribute('title');
+          config.controls = this.element.getChild(0).getAttribute('controls');
+          config.responsive = this.element.getAttribute('data-responsive');
+          config.poster = this.element.getChild(0).getAttribute('poster');
+          config.muted = this.element.getChild( 0 ).getAttribute( 'muted' );
         }
 
-        if (src) {
-          this.setData('src', src);
+        if (config.src) {
+          this.setData('src', config.src);
 
-          if (align) {
-            this.setData('align', align);
+          if (config.align) {
+            this.setData('align', config.align);
           } else {
             this.setData('align', 'none');
           }
 
-          if (width) {
-            this.setData('width', width);
+          if (config.width) {
+            this.setData('width', config.width);
           }
 
-          if (height) {
-            this.setData('height', height);
+          if (config.height) {
+            this.setData('height', config.height);
           }
 
-          if (autoplay) {
+          if (config.autoplay) {
             this.setData('autoplay', 'yes');
           }
 
-          if (allowdownload) {
+          if (config.allowdownload) {
             this.setData('allowdownload', 'yes');
           }
 
-          if (loop) {
+          if (config.loop) {
             this.setData('loop', 'yes');
           }
 
-          if (advisorytitle) {
-            this.setData('advisorytitle', advisorytitle);
+          if (config.advisorytitle) {
+            this.setData('advisorytitle', config.advisorytitle);
           }
 
-          if (responsive) {
-            this.setData('responsive', responsive);
+          if (config.responsive) {
+            this.setData('responsive', config.responsive);
           }
 
-          if (controls) {
+          if (config.controls) {
             this.setData('controls', controls);
           }
 
-          if (poster) {
+          if (config.poster) {
             this.setData('poster', poster);
+          }
+
+          if (config.muted) {
+            this.setData('poster', muted);
           }
         }
       },
