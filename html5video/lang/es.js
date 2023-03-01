@@ -13,7 +13,9 @@ CKEDITOR.plugins.setLang( 'html5video', 'es', {
     advisorytitle: 'Título consultivo',
     yes: 'Sí',
     no: 'No',
+    loop: '¿En bucle?',
     responsive: '¿Adaptativo?',
     controls: 'Mostrar controles',
+    poster: 'Miniatura',
     muted: '¿Silenciado?'
 } );
