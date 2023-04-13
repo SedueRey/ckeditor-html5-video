@@ -22,9 +22,9 @@ CKEDITOR.plugins.add('html5video', {
       init() {
         const defaultConfig = {
           src : '',
-          autoplay : '',
+          autoplay : false,
           loop : '',
-          controls : '',
+          controls : true,
           align : this.element.getStyle('text-align'),
           width : '',
           height : '',
