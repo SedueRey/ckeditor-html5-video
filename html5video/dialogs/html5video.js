@@ -89,7 +89,11 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                 id: 'controls',
                 label: editor.lang.html5video.controls,
                 setup: function (widget) {
-                    this.setValue(widget.data.controls);
+                    if (widget.data.controls) {
+                        this.setValue(widget.data.controls);
+                    } else {
+                        this.setValue(true);
+                    }
                 },
                 commit: function (widget) {
                     widget.setData('controls', this.getValue() ? 'true' : '');
