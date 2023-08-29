@@ -91,15 +91,15 @@ CKEDITOR.plugins.add('html5video', {
           }
 
           if (config.controls) {
-            this.setData('controls', controls);
+            this.setData('controls', config.controls);
           }
 
           if (config.poster) {
-            this.setData('poster', poster);
+            this.setData('poster', config.poster);
           }
 
           if (config.muted) {
-            this.setData('poster', muted);
+            this.setData('poster', config.muted);
           }
         }
       },
